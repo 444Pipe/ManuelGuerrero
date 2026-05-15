@@ -14,7 +14,7 @@ app.use(express.static(__dirname, {
             res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
         }
         if (/\.(css|js)$/.test(filePath)) {
-            res.setHeader('Cache-Control', 'public, max-age=3600');
+            res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
         }
         if (/\.(png|jpg|jpeg|webp|svg|gif|ico)$/.test(filePath)) {
             res.setHeader('Cache-Control', 'public, max-age=86400');
