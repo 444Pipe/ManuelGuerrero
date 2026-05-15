@@ -1,0 +1,19 @@
+{
+  "name": "manuel-guerrero-arquitectos",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Manuel Guerrero Arquitectos - Gerencia & Desarrollo de Proyectos",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.19.2"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
