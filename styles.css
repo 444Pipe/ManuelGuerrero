@@ -535,7 +535,7 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
-    filter: grayscale(100%) contrast(1.05);
+    filter: saturate(1.05) contrast(1.05);
     transition: transform 8s ease-out, filter 0.6s ease;
     transform: scale(1.1);
     animation: heroZoom 12s ease-out forwards;
@@ -548,15 +548,15 @@ body {
 
 .hero-visual:hover .hero-image {
     transform: scale(1.06);
-    filter: grayscale(100%) contrast(1.15);
+    filter: saturate(1.15) contrast(1.1);
 }
 
 .hero-image-mask {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(180deg, transparent 60%, rgba(255, 255, 255, 0.4) 100%),
-        linear-gradient(90deg, rgba(247, 247, 247, 0.3) 0%, transparent 30%);
+        linear-gradient(180deg, transparent 65%, rgba(0, 0, 0, 0.25) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%, transparent 35%);
     pointer-events: none;
 }
 
@@ -1878,4 +1878,394 @@ section {
    =========================== */
 .no-scroll {
     overflow: hidden;
+}
+
+/* ===========================
+   MOBILE REFINEMENTS
+   =========================== */
+
+/* Tablet & below */
+@media (max-width: 1024px) {
+    body { font-size: 15px; }
+
+    .hero {
+        padding: 100px 0 80px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        gap: 50px;
+    }
+
+    .hero-visual {
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .hero-image-wrapper {
+        aspect-ratio: 16/10;
+    }
+
+    .hero-stats {
+        gap: 30px;
+    }
+
+    .stat-item {
+        align-items: center;
+    }
+
+    .stat-number {
+        font-size: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .header {
+        padding: 14px 0;
+    }
+
+    .header.scrolled {
+        padding: 8px 0;
+    }
+
+    .hero {
+        padding: 90px 0 60px;
+    }
+
+    .hero-container {
+        padding: 0 20px;
+        gap: 35px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .tag-line {
+        width: 28px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+        margin-bottom: 22px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        flex: 1;
+        min-width: 0;
+        justify-content: center;
+        padding: 16px 20px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-image-wrapper {
+        aspect-ratio: 4/5;
+        max-height: 65vh;
+    }
+
+    .hero-image-tag {
+        top: 18px;
+        left: -10px;
+        padding: 8px 14px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .hero-stats {
+        gap: 22px;
+        margin-top: 30px;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .stat-number {
+        font-size: 26px;
+    }
+
+    .stat-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    /* Sections */
+    section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 7vw, 3rem);
+        letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    /* Services on mobile: single column */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 35px 25px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    /* Projects */
+    .projects-filter {
+        gap: 10px;
+        margin-bottom: 40px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .projects-filter::-webkit-scrollbar { display: none; }
+
+    .filter-btn {
+        padding: 10px 18px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .project-title {
+        font-size: 22px;
+    }
+
+    .project-info {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+
+    /* About */
+    .about-grid { gap: 50px; }
+    .about-text { font-size: 15px; }
+
+    /* Process */
+    .process .section-header { margin-bottom: 40px; }
+
+    /* Testimonials */
+    .testimonial-text {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .testimonial-quote {
+        font-size: 80px;
+    }
+
+    .testimonial-controls {
+        gap: 20px;
+    }
+
+    .testimonial-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* CTA */
+    .cta {
+        padding: 70px 0;
+    }
+
+    .cta-content h2 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+
+    .cta-content p {
+        font-size: 16px;
+    }
+
+    /* Contact */
+    .contact-item {
+        gap: 16px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-map iframe {
+        height: 320px;
+    }
+
+    /* Form taps */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px; /* prevents iOS zoom on focus */
+    }
+
+    /* Footer */
+    .footer {
+        padding: 60px 0 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        font-size: 11px;
+    }
+
+    /* WhatsApp position */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* Buttons full-width feel cleaner */
+    .btn {
+        padding: 16px 24px;
+        font-size: 11px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .container { padding: 0 18px; }
+
+    .nav-logo-img {
+        height: 70px;
+    }
+    .header.scrolled .nav-logo-img {
+        height: 56px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 14px;
+        padding: 24px 0 0;
+        border-top: 1px solid var(--gray-200);
+    }
+
+    .stat-number { font-size: 24px; }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .service-card {
+        padding: 30px 22px;
+    }
+
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 22px;
+    }
+
+    .step-content h3 { font-size: 21px; }
+    .step-content p { font-size: 14px; }
+
+    .testimonial-text { font-size: 16px; }
+
+    .contact-socials {
+        flex-wrap: wrap;
+    }
+
+    .form-row {
+        gap: 24px;
+    }
+
+    .form-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 80px 0 40px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 30px;
+    }
+
+    .hero-visual {
+        max-width: 280px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Touch device hover fixes */
+@media (hover: none) {
+    .service-card:hover::before { transform: scaleY(0); }
+    .service-card:hover { color: var(--dark); }
+    .service-card:hover .service-icon { color: var(--dark); transform: none; }
+    .service-card:hover p { color: var(--gray-700); }
+    .service-card:hover .service-number { color: var(--gray-300); }
+    .service-card:hover .service-arrow { opacity: 0; }
+    .project-card:hover .project-image { transform: none; }
+    .project-card:hover .project-info { transform: none; }
+    .project-card:hover .view-project { opacity: 1; transform: none; }
+    .contact-map { filter: none; }
 }
